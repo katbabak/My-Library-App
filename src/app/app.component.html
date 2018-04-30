@@ -1,4 +1,11 @@
-<div>
+<div class="content">
   <div class="header">My Library</div>
-<app-tabs></app-tabs>
+  <div class="tabsAndContent">
+    <div class="tabs">
+     <app-tabs></app-tabs>
+    </div>
+     <div class="main-content">
+         <router-outlet></router-outlet>
+     </div>
+  </div>
 </div>

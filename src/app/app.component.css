@@ -1,3 +1,4 @@
+
 .header {
   text-align: center;
   vertical-align: middle;
@@ -8,3 +9,27 @@
   background: #f5e8c7;
   color: #5c1c19;
 }
+.tabsAndContent {
+  display: block;
+  text-align: center;
+}
+.tabs {
+  display: inline-block;
+  flex-direction: column;
+  width: 250px;
+  margin-right: -4px;
+  margin-top: -20px;
+}
+.main-content {
+position: relative;
+padding: 50px 70px 70px;
+min-width: 40%;
+min-height: 550px;
+max-height: 70%;
+display: inline-block;
+margin: 29px 0 0 0;
+background: #f5e8c7;
+/*border: 1px solid #5c1c19;*/
+}
+
+

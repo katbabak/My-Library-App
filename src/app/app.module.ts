@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { TabsComponent } from './tabs/tabs.component';
-import { AppRoutingModule } from './/app-routing.module';
 import { AllBooksComponent } from './all-books/all-books.component';
 import { FavouriteBooksComponent } from './favourite-books/favourite-books.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { FavouriteBooksComponent } from './favourite-books/favourite-books.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
