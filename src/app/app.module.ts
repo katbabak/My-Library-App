@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
+import { GoogleBooksApiService } from './google-books-api.service';
 
 
 import { AppComponent } from './app.component';
@@ -19,8 +22,12 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+ //   HttpClient
   ],
-  providers: [],
+  providers: [
+    GoogleBooksApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

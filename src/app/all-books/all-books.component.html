@@ -1,3 +1,24 @@
-<p>
-  all-books works!
-</p>
+<div class="search-container">
+  <input type="text" name="search" class="search input" #search placeholder="Search a book">
+  <button class="search button" (click)="onSearch(search.value)" type="submit">Search</button>
+</div>
+<div *ngIf="books" id="f">
+  <div class="container">
+ 
+    <div class="col-md-2 results-container" *ngFor="let book of books">
+      <span class="title">{{book.volumeInfo.title}}</span>
+      <p *ngIf="book.volumeInfo.subtitle" class="subtitle"><span>{{book.volumeInfo.subtitle}}</span></p>
+      <div class="imageAndContent">
+        <p *ngIf="book.volumeInfo.imageLinks" class="image"><img src={{book.volumeInfo.imageLinks.smallThumbnail}} /></p>
+        <div class="about-the-book">
+          <p>Authors: <span>{{book.volumeInfo.authors}}</span> </p>
+          <p *ngIf="book.volumeInfo.publishedDate">Date of publishing: <span>{{book.volumeInfo.publishedDate}}</span></p>
+          <p *ngIf="book.volumeInfo.language">Language: <span>{{book.volumeInfo.language}}</span></p>
+          <p>Number of pages: <span>{{book.volumeInfo.pageCount}}</span></p>
+        <!--<p>For more information click <a href=`$book.volumeInfo.infoLink`>here</a></p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--[routerLink]="['/search', book.volumeInfo.industryIdentifiers[0].identifier]"-->

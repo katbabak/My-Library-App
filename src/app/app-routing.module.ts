@@ -5,7 +5,7 @@ import { AllBooksComponent } from './all-books/all-books.component';
 import {FavouriteBooksComponent} from './favourite-books/favourite-books.component';
 
 const routes: Routes = [
-  { path: ' ', redirectTo: '/all-books' },
+  { path: '', redirectTo: '/all-books', pathMatch: 'full' },
   { path: 'all-books', component: AllBooksComponent },
   { path: 'favourites', component: FavouriteBooksComponent },
 

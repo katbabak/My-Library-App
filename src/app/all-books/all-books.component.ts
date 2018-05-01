@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GoogleBooksApiService } from '../google-books-api.service';
 
 @Component({
   selector: 'app-all-books',
@@ -6,10 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-books.component.css']
 })
 export class AllBooksComponent implements OnInit {
+  books: any;
 
-  constructor() { }
+  constructor(private googleBooksService: GoogleBooksApiService) { }
 
   ngOnInit() {
+    this.googleBooksService.getBooks()
+      .subscribe((data) => {
+        this.books = data.items;
+        console.dir(this.books);
+      });
   }
-
+  onSearch(request) {
+    this.googleBooksService.searchBooks(request)
+      .subscribe((data) => {
+        this.books = data.items;
+        console.dir(this.books);
+      });
+  }
 }

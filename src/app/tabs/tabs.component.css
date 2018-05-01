@@ -1,12 +1,12 @@
-
+.wrapper {
+  text-align: center;
+  width: 780px;
+}
 .tabs-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  max-width: 250px;
+  flex-direction: row;
   position: relative;
   margin-top: 30px;
-  /*margin-left: 200px;*/
 }
 
 .tab {
@@ -18,44 +18,28 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
   line-height: 50px;
   background: #f5e8c7;
-  border: 1px solid rgba(147, 184, 189, 0.8);
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border: 1px solid rgba(92, 28, 25, 0.8);
   text-align: center;
   color: rgba(92, 28, 25, 1);
   text-decoration: none;
 }
 
 .tab.active {
-  z-index: 2;
   width: 100%;
   position: relative;
   font-size: 30px;
   color: rgba(193, 0, 8, 1);
-  border-right: 0;
 }
 
 .tab:not(.active) {
   background: #f5e8c7;
 }
 
-.tab:not(.active):hover {
-  width: 100%;
-  cursor: pointer;
-  animation: scaleTab  0.4s ease-in-out;
-  animation-fill-mode: forwards;
-
+.f {
+  border-top-left-radius: 8px;
 }
 
-
-@keyframes scaleTab {
-  0% {
-    width: 95%;
-    font-size: 25px;
-  }
-  100% {
-    width: 100%;
-    font-size: 30px;
-    color: rgba(193, 0, 8, 1);
-  }
+.t {
+  border-top-right-radius: 8px;
 }
+
