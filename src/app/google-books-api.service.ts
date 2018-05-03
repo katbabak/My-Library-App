@@ -3,9 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
-interface ResponseBooksData {
-  items: Array<any>;
-}
 @Injectable()
 export class GoogleBooksApiService {
 
@@ -23,6 +20,5 @@ export class GoogleBooksApiService {
 
     return response;
   }
-
 }
 
