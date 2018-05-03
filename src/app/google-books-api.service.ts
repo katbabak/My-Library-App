@@ -17,7 +17,6 @@ export class GoogleBooksApiService {
   searchBooks(searchRequest): Observable<any> {
     const encodedURI  = encodeURI('https://www.googleapis.com/books/v1/volumes?q=' + searchRequest + '&maxResults=40');
     const response = this.http.get(encodedURI);
-
     return response;
   }
 }
