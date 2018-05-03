@@ -1,3 +1,25 @@
-<p>
-  favourite-books works!
-</p>
+
+<div *ngIf="listLocalBooks" id="f">
+  <div class="container">
+
+    <div class="col-md-2 results-container" *ngFor="let book of listLocalBooks; let i=index">
+      <span class="title">{{book.volumeInfo.title}} {{ book.volumeInfo.id}}</span>
+      <p *ngIf="book.volumeInfo.subtitle" class="subtitle"><span>{{book.volumeInfo.subtitle}}</span></p>
+      <div class="imageAndContent">
+        <p *ngIf="book.volumeInfo.imageLinks" class="image"><img src={{book.volumeInfo.imageLinks.smallThumbnail}} /></p>
+        <p *ngIf="!book.volumeInfo.imageLinks" class="image"><img src='../../assets/book-cover.jpg' /></p>
+
+        <div class="about-the-book">
+          <p *ngIf="book.volumeInfo.authors">Authors: <span>{{book.volumeInfo.authors}}</span> </p>
+          <p *ngIf="book.volumeInfo.publishedDate">Date of publishing: <span>{{book.volumeInfo.publishedDate}}</span></p>
+          <p *ngIf="book.volumeInfo.language">Language: <span>{{book.volumeInfo.language}}</span></p>
+          <p *ngIf="book.volumeInfo.pageCount">Number of pages: <span>{{book.volumeInfo.pageCount}}</span></p>
+        </div>
+        <div class="icons">
+          <i class="fa fa-heart favourite" aria-hidden="true" title="add book to favourites"
+             [ngClass]="{favourite: book.isFavourite}" (click)="deleteBookFromFavourites(book.id)"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

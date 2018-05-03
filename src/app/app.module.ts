@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-// import { HttpClient } from '@angular/common/http';
 import { GoogleBooksApiService } from './google-books-api.service';
+import { FavouriteBooksStorageService } from './favourite-books-storage.service';
 
 
 import { AppComponent } from './app.component';
@@ -23,10 +23,10 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
- //   HttpClient
   ],
   providers: [
-    GoogleBooksApiService
+    GoogleBooksApiService,
+    FavouriteBooksStorageService
   ],
   bootstrap: [AppComponent]
 })
